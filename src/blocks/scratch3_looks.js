@@ -288,6 +288,7 @@ class Scratch3LooksBlocks {
             looks_sayforsecs: this.sayforsecs,
             looks_think: this.think,
             looks_thinkforsecs: this.thinkforsecs,
+            looks_saynothing: this.saynothing,
             looks_show: this.show,
             looks_hide: this.hide,
             looks_hideallsprites: () => {}, // legacy no-op block
@@ -366,6 +367,10 @@ class Scratch3LooksBlocks {
                 resolve();
             }, 1000 * args.SECS);
         });
+    }
+
+    saynothing (args, util) {
+        this._updateBubble(target, 'say', '');
     }
 
     show (args, util) {
